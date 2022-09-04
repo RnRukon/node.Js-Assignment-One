@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/random", userController.getRandomUsers)
 router.get("/all", userController.getUsersAll)
 router.post('/save', userController.postUser)
-// router.patch('/update/:id', userController.patchUser)
+router.patch('/update/:id', userController.patchUser)
 // router.patch("/bulk-update/:id", userController.bulkUpdate)
 router.delete("/delete/:id", userController.deleteUser)
 

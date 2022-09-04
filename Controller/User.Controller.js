@@ -99,7 +99,7 @@ module.exports.deleteUser = async (req, res) => {
 
 
 /* *********@Patch tools******** */
-/* module.exports.patchUser = (req, res) => {
+module.exports.patchUser = (req, res) => {
     try {
         const id = req.params.id;
         const { name, gender, contact, address, photoUrl } = req.body;
@@ -114,7 +114,7 @@ module.exports.deleteUser = async (req, res) => {
         res.send("server err")
     }
 }
- */
+
 
 
 
