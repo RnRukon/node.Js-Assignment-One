@@ -83,10 +83,14 @@ module.exports.deleteUser = async (req, res) => {
         const id = req.params.id;
 
         const filter = users.filter(user => user.id !== Number(id))
+
         fs.writeFileSync('userData.json', JSON.stringify(filter), 'utf-8');
 
-        console.log(filter);
-        res.status(200).json("filter");
+
+        res.status(200).json({
+            massage: 'delete user',
+            user: filter
+        });
     } catch (error) {
         res.send("server err")
     }
@@ -95,7 +99,7 @@ module.exports.deleteUser = async (req, res) => {
 
 
 /* *********@Patch tools******** */
-module.exports.patchUser = (req, res) => {
+/* module.exports.patchUser = (req, res) => {
     try {
         const id = req.params.id;
         const { name, gender, contact, address, photoUrl } = req.body;
@@ -110,7 +114,7 @@ module.exports.patchUser = (req, res) => {
         res.send("server err")
     }
 }
-
+ */
 
 
 
