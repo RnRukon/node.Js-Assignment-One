@@ -114,6 +114,3 @@ module.exports.patchUser = (req, res) => {
 
 
 
-module.exports.bulkUpdate = (req, res) => {
-
-}
