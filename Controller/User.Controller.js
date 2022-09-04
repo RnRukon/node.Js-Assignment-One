@@ -23,7 +23,10 @@ module.exports.getUsersAll = (req, res) => {
     try {
         const limit = req.query.limit;
         const getAllUser = users.slice(0, limit)
-        res.status(200).json(getAllUser)
+        res.status(200).json({
+            massage: 'Get limit data successfully',
+            user: getAllUser
+        })
     } catch (error) {
         res.status(400).send('Server Error')
     }
@@ -109,7 +112,10 @@ module.exports.patchUser = (req, res) => {
         filter.contact = contact;
         filter.address = address;
         filter.photoUrl = photoUrl;
-        res.status(200).json(filter);
+        res.status(200).json({
+            massage: 'Update successfully',
+            updatedData: filter
+        });
     } catch (error) {
         res.send("server err")
     }
